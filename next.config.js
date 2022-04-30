@@ -1,6 +1,13 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @format
+ * @type {import('next').NextConfig}
+ */
+
 const nextConfig = {
-  reactStrictMode: true,
+	reactStrictMode: true,
+	images: {
+		domains: ['links.papareact.com', 'fakestoreapi.com'],
+	},
 }
 
 module.exports = nextConfig
