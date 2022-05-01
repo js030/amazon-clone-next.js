@@ -5,8 +5,15 @@ import Image from 'next/image'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
+import { useEffect, useState } from 'react'
 
 export default function Home({ products }) {
+	const [datas, setDatas] = useState([])
+
+	useEffect(() => {
+		setDatas(products)
+	}, [])
+
 	return (
 		<div className='bg-gray-100'>
 			<Head>
@@ -20,7 +27,7 @@ export default function Home({ products }) {
 			<main className='max-w-screen-2xl mx-auto'>
 				<Banner />
 
-				<ProductFeed products={products} />
+				<ProductFeed products={datas} />
 			</main>
 		</div>
 	)
